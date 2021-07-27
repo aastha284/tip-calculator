@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+	</style>
+</head>
+<body bgcolor="#91d7eb">
+	<div class="heading-container">
+		SPLI<br>TIER
+	</div>
+	<div class="calc-container">
+		<div class="entry-container">
+			<form id="calci" class="form-container" method="POST">
+				<label class="lbl">Bill</label>
+				<br>
+				<input id="bill" type="text" name="amount" class="inp" style="background-image: url(icon-dollar.svg);
+	background-repeat: no-repeat;" required>
+				<br>
+				<label class="lbl">Number of people</label>
+				<label id="num">&nbsp&nbspCan't be zero</label>
+				<br>
+				<input type="text" name="numberofpoeple" class="inp" style="background-image: url(icon-person.svg);
+					background-repeat: no-repeat;" id="people" required>
+				<br>
+				<label class="lbl">Select Tip %</label>
+				<br>
+				<div id="tip-container">
+					<button class="btn" id="tip5" onclick="tip('tip5')">5%</button>
+					<button class="btn" id="tip10" onclick="tip('tip10')">10%</button>
+					<button class="btn" id="tip15" onclick="tip('tip15')">15%</button>
+					<br>
+					<button class="btn" id="tip25" onclick="tip('tip25')">25%</button>
+					<button class="btn" id="tip50" onclick="tip('tip50')">50%</button>
+					<input type="number" name="custom" placeholder="Custom" id="custom" onchange="tipforcustom()">
+				</div>
+			</form>
+		</div>	
+		<div class="bill-container">
+			<div id="temp">
+				<div id="temp1">
+					<label>Tip Amount<br style="line-height: 1px;"><span class="person-text">/person</span></label>
+					<br>
+					<br>
+					<label>Total Amount<br><span class="person-text">/person</span></label>
+				</div>
+				<div class="dollar-container">
+					<label id="tipAmount">$0.00</label>
+					<br>
+					<label id="totalAmount">$0.00</label>
+				</div>
+			</div>
+				<br>
+				<br>
+				<br>
+			<button id="reset-btn" onclick="resetForm()">RESET</button>
+		</div>	
+	</div>
+	<script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>

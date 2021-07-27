@@ -67,6 +67,8 @@ function tip(id)
 			var amountPerPerson = parseFloat(bill)/parseFloat(numberOfPeople);
 			var tipPerPerson = tipAmount*(1/100)*parseFloat(amountPerPerson);
 			bill=parseFloat(tipPerPerson)+parseFloat(amountPerPerson);
+			tipPerPerson=(tipPerPerson).toFixed(2);
+			bill=(bill).toFixed(2);
 			document.getElementById("tipAmount").innerHTML= "$"+tipPerPerson;
 			document.getElementById("totalAmount").innerHTML= "$"+bill;
 		}

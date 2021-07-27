@@ -26,59 +26,67 @@ function tip(id)
 	var btn = id;
 	if(btn=="tip5")
 	{
-		var a = 5;
+		var tipAmount = 5;
 	}
 	else if(btn=="tip10")
 	{
-		var a = 10;
+		var tipAmount = 10;
 	}
 	else if(btn=="tip15")
 	{
-		var a = 15;
+		var tipAmount = 15;
 	}
 	else if(btn=="tip25")
 	{
-		var a = 25;
+		var tipAmount = 25;
 	}
 	else if(btn=="tip50")
 	{
-		var a = 50;
+		var tipAmount = 50;
 	}
 	else
 	{
-		var a = parseInt(btn);
+		var tipAmount = parseInt(btn);
 	}
 	var bill= document.querySelector("#bill").value;
 	var numberOfPeople =document.querySelector("#people").value;
-	if(numberOfPeople==0)
+	if(bill< 0 || num<0 || numberOfPeople<0)
 	{
-		nozero();
+		alert("Please enter the valid inputs");
+		resetForm();
 	}
 	else
 	{
-		cantBeZero.style.display="none";
-		var n = parseFloat(bill)/parseFloat(numberOfPeople);
-		n = a*(1/100)*parseFloat(n);
-		bill=parseFloat(bill)+parseFloat(n);
-		document.getElementById("tipAmount").innerHTML= "$"+n;
-		document.getElementById("totalAmount").innerHTML= "$"+bill;
+		if(numberOfPeople==0)
+		{
+			nozero();
+		}
+		else
+		{
+			cantBeZero.style.display="none";
+			var amountPerPerson = parseFloat(bill)/parseFloat(numberOfPeople);
+			var tipPerPerson = tipAmount*(1/100)*parseFloat(amountPerPerson);
+			bill=parseFloat(tipPerPerson)+parseFloat(amountPerPerson);
+			document.getElementById("tipAmount").innerHTML= "$"+tipPerPerson;
+			document.getElementById("totalAmount").innerHTML= "$"+bill;
+		}
 	}
 }
 
 
 function tipforcustom()
 {
-	var n = document.getElementById("custom").value;
-	var num = document.getElementById("people").value;
+	var customTip = document.getElementById("custom").value;
+	var numberOfPeople = document.getElementById("people").value;
 	var bill = document.getElementById("bill").value;
-	if(num=="" || bill=="")
+	if(numberOfPeople=="" || bill=="" || bill< 0 || numberOfPeople<0 || customTip<0)
 	{
-		alert("Please enter the required inputs");
+		alert("Please enter the valid inputs");
 		resetForm();
 	}
 	else
 	{
-		tip(n);
+		tip(customTip);
 	}	
 }
 

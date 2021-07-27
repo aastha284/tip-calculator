@@ -19,7 +19,7 @@
   border-radius: 10px;
   font-family: "Space Mono", monospace;
   height: 271px;
-  box-shadow: 10px 10px 8px #888888;
+  box-shadow: 10px 10px 8px #78b3c4;
 }
 .entry-container {
   line-height: 30px;
@@ -123,6 +123,8 @@
   border-radius: 5px;
   border: 0px;
   margin: 5px;
+  padding: 5px 10px;
+  background-position: 10px;
 }
 .inp:active {
   border-color: #10544d;
